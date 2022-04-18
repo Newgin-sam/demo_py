@@ -11,4 +11,7 @@ def ask_for_int():
         finally:
             print("this is final \n")
 
+
+# exception TypeError, excetion OSError         for particular errors
+
 ask_for_int()
