@@ -24,3 +24,13 @@ soup = bs4.BeautifulSoup(res.text, 'lxml')
 
 for item in soup.select('.toctext'):
     print(item.text)
+
+i = 0
+
+for img in soup.select('.thumbimage'):
+    print(img['src'])
+    imgd = requests.get("https:"+img['src'])
+    f = open('image_'+str(i)+'.jpg', 'wb')
+    f.write(imgd.content)
+    i = i+1
+    f.close()
